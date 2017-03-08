@@ -1,4 +1,4 @@
-#Palete
+#Palate
 
 ##Team Members
 
