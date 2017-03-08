@@ -1,12 +1,12 @@
-# Palete
+#Palate
 
-##Team Members 
+##Team Members
 
-- Kimberly Embry 
+- Kimberly Embry
 - Ethan Fertsch
-- Hussein Al-Sammaraie 
-- Zaw Lwin 
-- Jack Howerton 
+- Hussein Al-Sammaraie
+- Zaw Lwin
+- Jack Howerton
 
 ##User Stories According to Jerome
 
@@ -14,7 +14,7 @@
 
 - Create an account, with the ability to login and logout
 - See the a menu consisting of 5 highest rated dishes in each category
-- Filter all results based on course-type 
+- Filter all results based on course-type
 
 **A Registered User Can:**
 
@@ -22,7 +22,3 @@
 - Update and delete recipes they created
 - View their profile, with all recipes listed
 - Rate other users' recipes
-
-
-
-
