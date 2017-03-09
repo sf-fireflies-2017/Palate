@@ -7,4 +7,5 @@ class Recipe < ApplicationRecord
     ratings_array = this.ratings
      ratings_array.reduce(0) {|sum, rating| sum+ rating.value} / ratings_array.length
   end
+
 end

@@ -1,9 +1,18 @@
 <h1> Welcome to your Profile <%= @user.username %> </h1>
 
 
+
+<h2> Want to create a new Recipe? Select a course.</h2>
+
+<%= button_to "Appetizer", new_recipe_path %>
+<%= button_to "Salad", new_recipe_path %>
+<%= button_to "Entree", new_recipe_path %>
+<%= button_to "Dessert", new_recipe_path %>
+
 <strong>User Recipes:</strong>
+
 <ul>
 	<%@user.recipes.each do |recipe| %>
-		<li> <%=link_to "#{recipe.name}", recipe_path(recipe) %>  </li>
+		<li> <%=link_to "#{recipe.name}", recipe_path(recipe) %> Average Rating: <%=recipe.average_rating%>  </li>
 	<%end%>
 </ul>
