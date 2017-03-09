@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+<<<<<<< HEAD
+=======
   include SessionsHelper
 
   def average_rating (ratings_array)
@@ -20,4 +22,5 @@ class ApplicationController < ActionController::Base
 
 
 
+>>>>>>> d544de2bb27c5fa47e667d3b7519d7c6fa8579ea
 end
