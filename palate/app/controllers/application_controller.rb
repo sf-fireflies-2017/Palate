@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  include SessionsHelper
+
   def average_rating (ratings_array)
      ratings_array.reduce(0) {|sum, rating| sum+ rating.value} / ratings_array.length
   end
@@ -15,5 +17,7 @@ class ApplicationController < ActionController::Base
 
     #return the array of recipe ids. need to find the recipe with these id  
   end
+
+
 
 end
