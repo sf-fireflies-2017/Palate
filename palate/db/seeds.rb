@@ -22,6 +22,7 @@ name: Faker::Pokemon.name,
 cuisine: "#{Faker::Demographic.demonym} cousine",
 course_type: "appetizer",
 instructions: "Don't try this at home",
+difficulty_level: rand(1...5),
 time: Time.now,
 creator_id: rand(0...50))
 
