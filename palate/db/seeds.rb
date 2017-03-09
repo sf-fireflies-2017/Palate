@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 User.destroy_all
 Recipe.destroy_all
 Ingredient.destroy_all
@@ -12,3 +13,5 @@ Ingredient.create(item: "Beef", amount: "5", metric: "balls", recipe_id: 1)
 Rating.create(value: 5, rater_id: 1, recipe_id: 1)
 
 
+=======
+>>>>>>> 0f806e68899de19a9a5bed25f4c758b14ee7d0b0
