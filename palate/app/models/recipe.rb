@@ -5,6 +5,7 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :ingredients
 
   def average_rating
-     self.ratings.reduce(0) {|sum, rating| sum+ rating.value} / self.ratings.length
+    ratings_array = this.ratings
+     ratings_array.reduce(0) {|sum, rating| sum+ rating.value} / ratings_array.length
   end
 end
