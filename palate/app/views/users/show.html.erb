@@ -1,1 +1,9 @@
 <h1> Welcome to your Profile <%= @user.username %> </h1>
+
+<strong>User Recipes:</strong>
+<ul>
+	<%@user.recipes.each do |recipe| %>
+		<li> <%=link_to "#{recipe.name}", recipe_path(recipe) %>  </li>
+	<%end%>
+</ul>
+
