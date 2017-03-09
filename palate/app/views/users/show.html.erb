@@ -3,7 +3,7 @@
 <strong>User Recipes:</strong>
 <ul>
 	<%@user.recipes.each do |recipe| %>
-		<li> <%=link_to "#{recipe.name}", recipe_path(recipe) %>  </li>
+		<li> <%=link_to "#{recipe.name}", recipe_path(recipe) %> Average Rating: <%=recipe.average_rating%>  </li>
 	<%end%>
 </ul>
 
