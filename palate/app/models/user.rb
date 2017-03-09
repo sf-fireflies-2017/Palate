@@ -4,4 +4,6 @@ class User < ApplicationRecord
 	has_many :rated_recipes, through: :ratings, source: :rater 
 
 	validates :email, :username, uniqueness: true 
+
+	has_secure_password
 end
