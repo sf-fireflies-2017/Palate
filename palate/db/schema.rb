@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309181448) do
+ActiveRecord::Schema.define(version: 20170309194809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20170309181448) do
     t.string   "cuisine"
     t.string   "course_type"
     t.text     "instructions"
-    t.time     "time"
+    t.string   "time"
     t.integer  "creator_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
