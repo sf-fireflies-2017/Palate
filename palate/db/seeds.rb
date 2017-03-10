@@ -18,25 +18,25 @@ end
 
 recipes = [
 
-	app1 = Recipe.create(name: "Paella", cuisine: "Spanish", course_type: "appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 2 ,creator_id: 1)
-	app2 = Recipe.create(name: "Meatballs", cuisine: "Italian", course_type: "appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 3 ,creator_id: 2)
-	app3 = Recipe.create(name: "Satay", cuisine: "Burmese", course_type: "appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 5 ,creator_id: 3)
-	app4 = Recipe.create(name: "Mini-Bahn Mi", cuisine: "Vietnamese", course_type: "appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 4 ,creator_id: 4)
-	app5 = Recipe.create(name: "Falafel", cuisine: "Middle Eastern", course_type: "appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 1 ,creator_id: 5)
+	app1 = Recipe.create(name: "Paella", cuisine: "Spanish", course_type: "Appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 2 ,creator_id: 1)
+	app2 = Recipe.create(name: "Meatballs", cuisine: "Italian", course_type: "Appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 3 ,creator_id: 2)
+	app3 = Recipe.create(name: "Satay", cuisine: "Burmese", course_type: "Appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 5 ,creator_id: 3)
+	app4 = Recipe.create(name: "Mini-Bahn Mi", cuisine: "Vietnamese", course_type: "Appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 4 ,creator_id: 4)
+	app5 = Recipe.create(name: "Falafel", cuisine: "Middle Eastern", course_type: "Appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 1 ,creator_id: 5)
 
-	salad1 = Recipe.create(name: "Chopped Thai Salad", cuisine: "Thai", course_type: "salad", instructions: "Just prepare, toss, and enjoy!", time: "20 minutes", difficulty_level: 3 ,creator_id: 1)
-	salad2 = Recipe.create(name: "Tea Leaf Salad ", cuisine: "Burmese", course_type: "salad", instructions: "Just prepare, toss, and enjoy!", time: "60 minutes", difficulty_level: 2 ,creator_id: 2)
-	salad3 = Recipe.create(name: "Cobb Salad", cuisine: "American", course_type: "salad", instructions: "Just prepare, toss, and enjoy!", time: "120 minutes", difficulty_level: 5 ,creator_id: 3)
-	salad4 = Recipe.create(name: "African Salad", cuisine: "African", course_type: "salad", instructions: "Just prepare, toss, and enjoy!", time: "10 minutes", difficulty_level: 1 ,creator_id: 4)
+	salad1 = Recipe.create(name: "Chopped Thai Salad", cuisine: "Thai", course_type: "Salad", instructions: "Just prepare, toss, and enjoy!", time: "20 minutes", difficulty_level: 3 ,creator_id: 1)
+	salad2 = Recipe.create(name: "Tea Leaf Salad", cuisine: "Burmese", course_type: "Salad", instructions: "Just prepare, toss, and enjoy!", time: "60 minutes", difficulty_level: 2 ,creator_id: 2)
+	salad3 = Recipe.create(name: "Cobb Salad", cuisine: "American", course_type: "Salad", instructions: "Just prepare, toss, and enjoy!", time: "120 minutes", difficulty_level: 5 ,creator_id: 3)
+	salad4 = Recipe.create(name: "African Salad", cuisine: "African", course_type: "Salad", instructions: "Just prepare, toss, and enjoy!", time: "10 minutes", difficulty_level: 1 ,creator_id: 4)
 
 
-	entree1 = Recipe.create(name: "Hearty Beef Pho", cuisine: "Vietnamese", course_type: "entree", instructions: "Just prepare, assemble, cook, and enjoy!", time: "120 minutes", difficulty_level: 4 ,creator_id: 2)
-	entree2 = Recipe.create(name: "Squidink Pasta with Seafood Medley", cuisine: "Italian", course_type: "entree", instructions: "Just prepare, assemble, cook, and enjoy!", time: "4 hours", difficulty_level: 4 ,creator_id: 3)
-	entree3 = Recipe.create(name: "Braised Lamb Shanks with Broccolini", cuisine: "French", course_type: "entree", instructions: "Just prepare, assemble, cook, and enjoy!", time: "1.5 hours", difficulty_level: 4 ,creator_id: 4)
-	entree4 = Recipe.create(name: "Beef Stroganoff", cuisine: "Russian", course_type: "entree", instructions: "Just prepare, assemble, cook, and enjoy!", time: "45 minutes", difficulty_level: 4 ,creator_id: 5)
+	entree1 = Recipe.create(name: "Hearty Beef Pho", cuisine: "Vietnamese", course_type: "Entree", instructions: "Just prepare, assemble, cook, and enjoy!", time: "120 minutes", difficulty_level: 4 ,creator_id: 2)
+	entree2 = Recipe.create(name: "Squidink Pasta with Seafood Medley", cuisine: "Italian", course_type: "Entree", instructions: "Just prepare, assemble, cook, and enjoy!", time: "4 hours", difficulty_level: 4 ,creator_id: 3)
+	entree3 = Recipe.create(name: "Braised Lamb Shanks with Broccolini", cuisine: "French", course_type: "Entree", instructions: "Just prepare, assemble, cook, and enjoy!", time: "1.5 hours", difficulty_level: 4 ,creator_id: 4)
+	entree4 = Recipe.create(name: "Beef Stroganoff", cuisine: "Russian", course_type: "Entree", instructions: "Just prepare, assemble, cook, and enjoy!", time: "45 minutes", difficulty_level: 4 ,creator_id: 5)
 
-	dessert1 = Recipe.create(name: "Alfajores", cuisine: "Mexican", course_type: "dessert", instructions: "Just bake and enjoy", time: "60 minutes", difficulty_level: 3 ,creator_id: 3)
-	dessert2 = Recipe.create(name: "Creme Brulee", cuisine: "French", course_type: "dessert", instructions: "Just bake and enjoy", time: "3 hours", difficulty_level: 5 ,creator_id: 2)
+	dessert1 = Recipe.create(name: "Alfajores", cuisine: "Mexican", course_type: "Dessert", instructions: "Just bake and enjoy", time: "60 minutes", difficulty_level: 3 ,creator_id: 3)
+	dessert2 = Recipe.create(name: "Creme Brulee", cuisine: "French", course_type: "Dessert", instructions: "Just bake and enjoy", time: "3 hours", difficulty_level: 5 ,creator_id: 2)
 
 ] 
 
