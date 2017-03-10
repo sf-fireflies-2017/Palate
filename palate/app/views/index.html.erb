@@ -1,12 +1,17 @@
 
-
-
 <div class="top_four">
-  <ul>
+
     <% @top_four.each do |menu_type| %>
+    	<h3><%=menu_type.course_type%></h3>
       <li>
-      <%= menu_type[rand(0..4)] %>
+        <%if !menu_type.empty? %>
+          <%if menu_type.length>5 %>
+          <%= menu_type[rand(0...4)].name %>
+          <% else %>
+          <%=  menu_type[rand(0...menu_type.length-1)].name%>
+          <% end %>
+        <% end %>
       </li>
     <% end %>
-  </ul>
+
 </div>
