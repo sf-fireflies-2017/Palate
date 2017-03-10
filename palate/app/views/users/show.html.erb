@@ -10,6 +10,6 @@
 
 <ul>
 	<%@user.recipes.each do |recipe| %>
-		<li> <%=link_to "#{recipe.name}", recipe_path(recipe) %> Average Rating: <%=recipe.average_rating%>  </li>
+		<li> <%=link_to "#{recipe.name}", recipe_path(recipe) %> <% if recipe.ratings.any? %> Average Rating: <%=recipe.average_rating%><% end %> <%= link_to "Edit", edit_recipe_path(recipe) %> <%= link_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?"} %>  </li>
 	<%end%>
 </ul>
