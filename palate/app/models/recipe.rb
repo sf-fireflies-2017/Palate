@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
   belongs_to :creator, class_name: "User"
   has_many :ratings
-  has_many :ingredients
+  has_many :ingredients, dependent: :destroy
   accepts_nested_attributes_for :ingredients, :allow_destroy => true
 
   def average_rating
@@ -20,7 +20,6 @@ class Recipe < ApplicationRecord
   def self.sort_by_rating_type (args) # will receive course_type in string   "all" if you neglect the course_type
 
     recipes_array = args[:array]
-
     type = args[:type]
     if recipes_array.length> 0
       if type == "all"
@@ -49,13 +48,13 @@ class Recipe < ApplicationRecord
     ########### return the whole list of recipe
   end
 
-    def has_ingredients? (ingredient)
-      self.ingredients.each do |i|
-        if i.item == ingredient
-          true
-        end
+  def has_ingredients? (ingredient)
+    self.ingredients.each do |i|
+      if i.item == ingredient
+        true
       end
-      false
     end
-
+    false
   end
+
+end

@@ -18,5 +18,23 @@
 <h4>Instructions:</h4>
 <%= @recipe.instructions %>
 
-<h5>Submitted By: <%= @creator %></h5>
-<%= link_to "+ Add New Recipe", new_recipe_path %>
+<h5> Submitted By: <%= @creator %></h5>
+<br>
+
+<% if @recipe.creator == current_user %>
+  <%= button_to "Edit Recipe", edit_recipe_path(@recipe), method: :get %>
+  <%= button_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?"} %>
+<% end %>
+
+
+<%= form_for :rating, url: recipe_ratings_path(@recipe) do |f| %>
+	<p>
+    <%= f.label :rate_this_recipe %><br>
+		<%= f.select :rating, [1, 2, 3, 4, 5], :prompt => 'Rate It!' %>
+	<p>
+
+  </p>
+  	 <%= f.submit %>
+  </p>
+
+<% end %>
