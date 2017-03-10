@@ -1,4 +1,8 @@
-<h1><%= @recipe.name.upcase %> | Rating: <%= @recipe.ratings.first.value %></h1>
+<% if @recipe.ratings.any? %>
+  <h1><%= @recipe.name.upcase %> | Rating: <%= @recipe.ratings.first.value %></h1>
+<% else %>
+  <h1><%= @recipe.name.upcase %></h1>
+<% end %>
 
 <h2><%= @recipe.cuisine %> | <%= @recipe.course_type.capitalize %></h2>
 
