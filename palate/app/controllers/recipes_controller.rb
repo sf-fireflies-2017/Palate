@@ -14,6 +14,10 @@ class RecipesController < ApplicationController
     10.times {@recipe.ingredients.build}
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
   def create
     @recipe = Recipe.new(recipe_params)
 
@@ -22,6 +26,17 @@ class RecipesController < ApplicationController
     else
       @errors = @recipe.errors.full_messages
       render "new"
+    end
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+
+    if @recipe.update(recipe_params)
+      redirect_to recipe_path(@recipe)
+    else
+      @errors = @recipe.errors.full_messages
+      render "edit"
     end
   end
 
