@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @types = ["Appetizer", "Salad", "Entree", "Dessert"]
   end
 
   def create
