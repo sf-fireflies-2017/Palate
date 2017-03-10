@@ -4,9 +4,14 @@ class RecipesController < ApplicationController
   end
 
   def query
+    
     if params[:type]
-      @recipes = Recipe.where(course_type: params[:type].downcase)
-    else
+      params[:type].capitalize! if params[:type] != params[:type].capitalize
+    end
+
+    if params[:type] != ''
+      @recipes = Recipe.where(course_type: params[:type])
+    else 
       @recipes = Recipe.all
     end
   end
