@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
 
   def query
     if params[:type]
-      @recipes = Recipe.where("course_type = #{params:type}")
+      @recipes = Recipe.where(course_type: params[:type].downcase)
     else
       @recipes = Recipe.all
     end
