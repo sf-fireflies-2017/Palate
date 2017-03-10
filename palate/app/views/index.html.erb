@@ -1,9 +1,8 @@
 
-
-
 <div class="top_four">
-  <ul>
+
     <% @top_four.each do |menu_type| %>
+    	<h3><%=menu_type.course_type%></h3>
       <li>
         <%if !menu_type.empty? %>
           <%if menu_type.length>5 %>
@@ -14,5 +13,5 @@
         <% end %>
       </li>
     <% end %>
-  </ul>
+
 </div>
