@@ -16,3 +16,16 @@
 
 <h5>Submitted By: <%= @creator %></h5>
 <%= link_to "+ Add New Recipe", new_recipe_path %>
+
+
+<%= form_for([@recipe, @rating]) do |f| %>
+	<p>
+    <%= f.label :rate_this_recipe %><br>
+		<%= f.select :rating, [1, 2, 3, 4, 5], :prompt => 'Rate It!' %>
+	<p>
+   
+  </p>
+  	 <%= f.submit %>
+  </p>
+
+<% end %>
