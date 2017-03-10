@@ -1,10 +1,10 @@
 <h1> Welcome to your Profile <%= @user.username %> </h1>
 <h2> Want to create a new Recipe? Select a course.</h2>
 
-<%= button_to "Appetizer", new_recipe_path %>
-<%= button_to "Salad", new_recipe_path %>
-<%= button_to "Entree", new_recipe_path %>
-<%= button_to "Dessert", new_recipe_path %>
+<%= button_to "Appetizer", new_recipe_path, params: {type: 'Appetizer'}, method: :get %>
+<%= button_to "Salad", new_recipe_path, params: {type: 'Salad'}, method: :get %>
+<%= button_to "Entree", new_recipe_path, params: {type: 'Entree'}, method: :get %>
+<%= button_to "Dessert", new_recipe_path, params: {type: 'Dessert'}, method: :get %>
 
 <strong>User Recipes:</strong>
 
