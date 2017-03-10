@@ -3,9 +3,15 @@
 
     <% @top_four.each do |menu_type| %>
     	<h3><%=menu_type.course_type%></h3>
-      <p>
-      <%= link_to menu_type.name, menu_type %>
-      </p>	
+      <li>
+        <%if !menu_type.empty? %>
+          <%if menu_type.length>5 %>
+          <%= menu_type[rand(0...4)].name %>
+          <% else %>
+          <%=  menu_type[rand(0...menu_type.length-1)].name%>
+          <% end %>
+        <% end %>
+      </li>
     <% end %>
 
 </div>
