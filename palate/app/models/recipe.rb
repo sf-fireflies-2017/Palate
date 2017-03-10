@@ -4,8 +4,7 @@ class Recipe < ApplicationRecord
   has_many :ingredients
 
   def average_rating
-    ratings_array = this.ratings
-     ratings_array.reduce(0) {|sum, rating| sum+ rating.value} / ratings_array.length
+    self.ratings.map{|rating| rating.value}.reduce(:+)/self.ratings.length
   end
 
 end
