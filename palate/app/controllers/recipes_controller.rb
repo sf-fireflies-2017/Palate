@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     1.times {@recipe.ingredients.build}
+    @types = ["Appetizer", "Salad", "Entree", "Dessert"]
   end
 
   def edit
