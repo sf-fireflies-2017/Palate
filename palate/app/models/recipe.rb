@@ -2,7 +2,7 @@ class Recipe < ApplicationRecord
   belongs_to :creator, class_name: "User"
   has_many :ratings
   has_many :ingredients
-  accepts_nested_attributes_for :ingredients
+  accepts_nested_attributes_for :ingredients 
 
   def average_rating
     ratings_array = this.ratings
