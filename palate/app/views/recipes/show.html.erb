@@ -6,14 +6,12 @@
 
 <h2><%= @recipe.cuisine %> | <%= @recipe.course_type.capitalize %></h2>
 
-<h3> Total Prep and Cook Time: <%= @recipe.time %> | Difficulty Level: <%= @recipe.difficulty_level %></h3>
+<h3> Time: <%= @recipe.time %> | Difficulty: <%= @recipe.difficulty_level %></h3>
 
-<h4>Ingredients</h4>
-<ul>
-<h4><% @ingredients.each do |ingredient| %>
-  <li><%= ingredient.item %>: <%= ingredient.amount %> <%= ingredient.metric %></li>
-<% end %></h4>
-</ul>
+<h4>Ingredients:</h4>
+<% @ingredients.each do |ingredient| %>
+  <p><%= ingredient.item %>: <%= ingredient.amount %> <%= ingredient.metric %></p>
+<% end %>
 
 <h4>Instructions:</h4>
 <%= @recipe.instructions %>
@@ -27,7 +25,7 @@
 <% end %>
 
 
-<!--  -->
+
 
 <% if @recipe.ratings.include?(Rating.find_by(rater_id: current_user.id)) %>
   <%existing_rating = @recipe.ratings.find_by(rater_id: current_user.id)%>
@@ -51,4 +49,5 @@
 <br>
 
 
+<%= render 'ratings/rating'%>
 
