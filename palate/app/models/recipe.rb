@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
   belongs_to :creator, class_name: "User"
   has_many :ratings
-  has_many :ingredients
+  has_many :ingredients, dependent: :destroy
   accepts_nested_attributes_for :ingredients, :allow_destroy => true
 
   def average_rating
@@ -13,9 +13,9 @@ class Recipe < ApplicationRecord
     type = course_type
 
     if type == "all"
-    return recipes_array.sort! {|x,y| y.average_rating <=>x.average_rating}
+      return recipes_array.sort! {|x,y| y.average_rating <=>x.average_rating}
     else
-    return recipes_array.sort! {|x,y| y.average_rating <=>x.average_rating }.select!{|x| x.course_type == type}
+      return recipes_array.sort! {|x,y| y.average_rating <=>x.average_rating }.select!{|x| x.course_type == type}
     end
     ####return the whole list of recipe, need to limit the number  or randomize as necessary
   end
@@ -35,14 +35,13 @@ class Recipe < ApplicationRecord
     ########### return the whole list of recipe
   end
 
-    def has_ingredients? (ingredient)
-      self.ingredients.each do |i|
-        if i.item == ingredient
-          true
-        end
+  def has_ingredients? (ingredient)
+    self.ingredients.each do |i|
+      if i.item == ingredient
+        true
       end
-      false
     end
-
+    false
   end
+end
 
