@@ -37,8 +37,6 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    p @recipe
-    p "*" * 100
 
     if @recipe.update(recipe_params)
       redirect_to recipe_path(@recipe)
@@ -46,6 +44,12 @@ class RecipesController < ApplicationController
       @errors = @recipe.errors.full_messages
       render "edit"
     end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to user_path(current_user)
   end
 
   private
