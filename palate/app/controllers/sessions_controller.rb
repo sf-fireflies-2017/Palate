@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       login
       redirect_to user_path(@user)
     else
-      render 'login'
+      render 'new'
     end
   end
 
