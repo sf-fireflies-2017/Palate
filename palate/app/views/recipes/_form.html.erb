@@ -1,4 +1,5 @@
 <%= form_for(@recipe) do |f| %>
+
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -6,17 +7,17 @@
 
   <p>
     <%= f.label :cuisine %><br>
-    <%= f.text_area :cuisine %>
+    <%= f.text_field :cuisine %>
   </p>
 
   <p>
     <%= f.label :course_type %><br>
-    <%= f.select :course_type, ["Appetizer", "Salad", "Entree", "Dessert"], :prompt => 'Select One' %>
+    <%= f.select :course_type, [params[:type]] + @types.keep_if {|x| x != params[:type]}%>
   </p>
 
   <p>
     <%= f.label :time %><br>
-    <%= f.text_area :time %>
+    <%= f.text_field :time %>
   </p>
 
   <p>
@@ -41,8 +42,6 @@
       </li>
     </ul>
   <% end %>
-  <%= link_to '+ Add Ingredient', new_ingredient_path %>
- <!--  recipes/:recipe_id/ingredients/new -->
 
   <p>
     <%= f.label :instructions %><br>
