@@ -9,13 +9,13 @@ class SessionsController < ApplicationController
       login
       redirect_to user_path(@user)
     else
-      render '/login'
+      render 'login'
     end
   end
 
   def destroy
     logout
-    redirect_to '/login'
+    redirect_to root_path
   end
 
 end
