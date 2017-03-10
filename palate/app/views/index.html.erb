@@ -6,7 +6,11 @@
     <% @top_four.each do |menu_type| %>
       <li>
         <%if !menu_type.empty? %>
-      <%= menu_type[rand(0..4)].name %>
+          <%if menu_type.length>5 %>
+          <%= menu_type[rand(0...4)].name %>
+          <% else %>
+          <%=  menu_type[rand(0...menu_type.length-1)].name%>
+          <% end %>
         <% end %>
       </li>
     <% end %>
