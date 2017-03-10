@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  root "recipes#index"
 
-  	
+  root "application#index"
+
   get '/recipes/query' => 'recipes#query'
-  resources :recipes do 
+  resources :recipes do
   	resources :ratings, only: [:new, :create]
-  end 
+  end
+
   resources :ingredients
   resources :users
 

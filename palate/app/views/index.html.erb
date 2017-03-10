@@ -1,0 +1,12 @@
+
+
+
+<div class="top_four">
+  <ul>
+    <% @top_four.each do |menu_type| %>
+      <li>
+      <%= menu_type[rand(0..4)] %>
+      </li>
+    <% end %>
+  </ul>
+</div>
