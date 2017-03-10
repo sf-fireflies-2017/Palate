@@ -18,7 +18,7 @@
 <%= link_to "+ Add New Recipe", new_recipe_path %>
 
 
-<%= form_for([@recipe, @rating]) do |f| %>
+<%= form_for :rating, url: recipe_ratings_path(@recipe) do |f| %>
 	<p>
     <%= f.label :rate_this_recipe %><br>
 		<%= f.select :rating, [1, 2, 3, 4, 5], :prompt => 'Rate It!' %>
