@@ -1,12 +1,11 @@
 
-
-
 <div class="top_four">
-  <ul>
+
     <% @top_four.each do |menu_type| %>
-      <li>
-      <%= menu_type[rand(0..4)] %>
-      </li>
+    	<h3><%=menu_type.course_type%></h3>
+      <p>
+      <%= link_to menu_type.name, menu_type %>
+      </p>	
     <% end %>
-  </ul>
+
 </div>
