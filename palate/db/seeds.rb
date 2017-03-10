@@ -38,7 +38,7 @@ recipes = [
 	dessert1 = Recipe.create(name: "Alfajores", cuisine: "Mexican", course_type: "Dessert", instructions: "Just bake and enjoy", time: "60 minutes", difficulty_level: 3 ,creator_id: 3)
 	dessert2 = Recipe.create(name: "Creme Brulee", cuisine: "French", course_type: "Dessert", instructions: "Just bake and enjoy", time: "3 hours", difficulty_level: 5 ,creator_id: 2)
 
-] 
+]
 
 recipes.each do |recipe|
 	Recipe.create(recipe)
@@ -127,4 +127,3 @@ ratings = [
 ratings.each do |rating|
 	Rating.create(rating)
 end
-
