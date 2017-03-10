@@ -1,6 +1,8 @@
-<h1>Welcome</h1>
-<ul>
+
+
 <% @recipes.each do |recipe| %>
-  <li><%= link_to "#{recipe.name}", recipe_path(recipe)%></li>
+
+  <p><%= link_to "#{recipe.name}", recipe_path(recipe)%> BY <%= recipe.creator.full_name.upcase %></p>
+
 <% end %>
-</ul>
+

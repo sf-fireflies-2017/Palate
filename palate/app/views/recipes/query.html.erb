@@ -1,7 +1,14 @@
-THIS IS THE QUERY PAGE
+
+<%if params[:type] == '' %>
+	<h3>Showing all recipes: (<%=@recipes.length%> found)<h3>
+<%else%>
+	<h3>Your results for: '<%=params[:type]%>' (<%=@recipes.length%> found)<h3>
+<%end%>
+
 
 
 <%@recipes.each do |recipe| %>
+		
 		<li> <%=link_to "#{recipe.name}", recipe_path(recipe) %> 
 
 		<% if recipe.ratings.any? %> 
@@ -12,5 +19,4 @@ THIS IS THE QUERY PAGE
 
 		<%= link_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?"} %>  </li>
 
-		
 <%end%>
