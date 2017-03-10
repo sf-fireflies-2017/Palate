@@ -3,6 +3,14 @@ class RecipesController < ApplicationController
     @recipes =  Recipe.all
   end
 
+  def query
+    if params[:type]
+      @recipes = Recipe.where("course_type = #{params:type}")
+    else
+      @recipes = Recipe.all
+    end
+  end
+
   def show
     @recipe = Recipe.find(params[:id])
     @creator = @recipe.creator.first_name
