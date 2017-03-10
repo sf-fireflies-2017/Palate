@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    10.times {@recipe.ingredients.build}
+    1.times {@recipe.ingredients.build}
   end
 
   def edit
@@ -20,6 +20,10 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    p recipe_params
+    p params
+    p "*" * 100
+    @recipe.creator = current_user
 
     if @recipe.save
       redirect_to recipe_path(@recipe)
@@ -31,6 +35,8 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
+    p @recipe
+    p "*" * 100
 
     if @recipe.update(recipe_params)
       redirect_to recipe_path(@recipe)
@@ -42,6 +48,6 @@ class RecipesController < ApplicationController
 
   private
     def recipe_params
-      params.require(:recipe).permit(:name, :course_type, :item, :amount, :instructions, :ingredients)
+      params.require(:recipe).permit(:name, :cuisine, :course_type, :time, :difficulty_level, :instructions, ingredients_attributes: [:item, :amount, :metric, :id, :recipe_id, '_destroy'])
     end
 end
