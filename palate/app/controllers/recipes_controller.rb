@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes =  Recipe.all
+    @recipes = Recipe.all
   end
 
   def query
@@ -67,6 +67,6 @@ class RecipesController < ApplicationController
 
   private
     def recipe_params
-      params.require(:recipe).permit(:name, :cuisine, :course_type, :time, :difficulty_level, :instructions, ingredients_attributes: [:item, :amount, :metric, :id, :recipe_id, '_destroy'])
+      params.require(:recipe).permit(:name, :cuisine, :course_type, :time, :difficulty_level, :instructions, ingredients_attributes: [:item, :amount, :metric, :id, :recipe_id, '_destroy'], ratings_attributes: [:value, :id, :recipe_id])
     end
 end

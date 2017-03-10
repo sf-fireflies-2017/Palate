@@ -1,0 +1,11 @@
+<%= form_for :rating, url: recipe_ratings_path(@recipe) do |f| %>
+	<p>
+    <%= f.label :rate_this_recipe %><br>
+		<%= f.select :value, [1, 2, 3, 4, 5], :prompt => 'Rate It!' %>
+	<p>
+
+  </p>
+  	 <%= f.submit %>
+  </p>
+
+<% end %>
