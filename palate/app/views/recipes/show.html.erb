@@ -1,0 +1,18 @@
+<h1><%= @recipe.name.upcase %> | Rating: <%= @recipe.ratings.first.value %></h1>
+
+<h2><%= @recipe.cuisine %> | <%= @recipe.course_type.capitalize %></h2>
+
+<h3> Total Prep and Cook Time: <%= @recipe.time %> | Difficulty Level: <%= @recipe.difficulty_level %></h3>
+
+<h4>Ingredients</h4>
+<ul>
+<h4><% @ingredients.each do |ingredient| %>
+  <li><%= ingredient.item %>: <%= ingredient.amount %> <%= ingredient.metric %></li>
+<% end %></h4>
+</ul>
+
+<h4>Instructions:</h4>
+<%= @recipe.instructions %>
+
+<h5>Submitted By: <%= @creator %></h5>
+<%= link_to "+ Add New Recipe", new_recipe_path %>
