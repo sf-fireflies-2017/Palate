@@ -1,3 +1,4 @@
+
 class RatingsController < ApplicationController
 	def new
 		@rating = Rating.new
@@ -14,7 +15,14 @@ class RatingsController < ApplicationController
 		else
 			render 'recipes/show'
 		end
-		
+
+	end
+
+	def destroy
+	    @rating = Rating.find(params[:id])
+	    @recipe = Recipe.find(@rating.recipe)
+	    @rating.destroy
+	    redirect_to @recipe
 	end
 
 	private
