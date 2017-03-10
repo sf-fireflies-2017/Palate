@@ -20,7 +20,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <img src="app/assets/images/logo.jpg">
     </div>
@@ -38,11 +38,11 @@
       </ul>
   </div>
 </nav>
-  
-<div class="container-fluid text-center">    
+
+<div class="container-fluid text-center">
   <div class="row content">
     <div class="col-sm-2 sidenav">
-    
+
       <div class="well">
         <p><a href="#">Appetizer</a></p>
       </div>
@@ -61,12 +61,11 @@
       </div>
 
     </div>
-    <div class="col-sm-8 text-left"> 
-      <h1>Welcome To Palate</h1>
+    <div class="col-sm-8 text-left">
       <hr>
       <div id="yield">
         <h2></h2>
-        <%= yield %> 
+        <%= yield %>
       </div>
       <hr>
     </div>
@@ -76,9 +75,18 @@
 </div>
 
 <footer class="container-fluid text-center footer">
-  <p>Footer Text</p>
+  <table>
+    <tr>
+      <th>Palate is the virtual home of Jerome Mathew's marriage of culinary passion and social networking. At Palate, you will not only find recipes created by food lovers all over the world, but you can also grab a taste at Jerome's restaurant, Plated.</th>
+      <th>Housed in San Francisco, Plated serves up a weekly changing menu based on Palate's top rated recipes.
+        Come get a taste!
+      <p>1234 Folsom Street</p>
+      <p>San Francisco, CA 94501<p>
+      <p>Tuesday - Saturday 3PM - 11PM</p></th>
+      <th>Did we mention chosen recipes receive 10% of the profits? To submit a recipe, <%= link_to "Register Now!", new_user_path %></th>
+    </tr>
+  </table>
 </footer>
 
 </body>
 </html>
-
