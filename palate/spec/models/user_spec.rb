@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe "User", type: :model do
 
-  describe User do
+  describe "User" do
     it "has a valid user" do
+      User.create()
 
     end
     it "has a email" do
@@ -19,7 +20,7 @@ RSpec.describe User, type: :model do
 
     end
     it "should have a list of recipes he created" do
-      
+
     end
   end
 
