@@ -2,15 +2,26 @@
 <div class="top_four">
 
     <% @top_four.each do |menu_type| %>
-      <li>
         <%if !menu_type.empty? %>
           <%if menu_type.length>5 %>
-          <%= menu_type[rand(0...4)].name %>
+          <% recipe =  menu_type[rand(0...4)]%>
+            <div class="each_menu">
+              <%= recipe.course_type %>
+              <br>
+              <%= link_to recipe.name, recipe_path(recipe)%>
+            </div>
+            <br>
           <% else %>
-          <%=  menu_type[rand(0...menu_type.length-1)].name%>
+          <% recipe = menu_type[rand(0...menu_type.length-1)]%>
+            <div class="each_menu">
+              <%= recipe.course_type %>
+              <br>
+              <%= link_to recipe.name, recipe_path(recipe)%>
+            </div>
+            <br>
           <% end %>
         <% end %>
-      </li>
+
     <% end %>
 
 </div>

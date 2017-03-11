@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/recipes/query' => 'recipes#query'
   resources :recipes do
-  	resources :ratings, only: [:new, :create]
+  	resources :ratings, only: [:new, :create, :destroy]
   end
 
   resources :ingredients
