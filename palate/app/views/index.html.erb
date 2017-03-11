@@ -2,7 +2,6 @@
 <div class="top_four">
 
     <% @top_four.each do |menu_type| %>
-
         <%if !menu_type.empty? %>
           <%if menu_type.length>5 %>
           <% recipe =  menu_type[rand(0...4)]%>

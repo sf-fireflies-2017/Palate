@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
                   Recipe.sort_by_rating_type(array: recipe_array, type:"Entree")[0...4] ,
                   Recipe.sort_by_rating_type(array: recipe_array, type:"Dessert")[0...4] ]
 
+
     render '/index.html'
   end
 
