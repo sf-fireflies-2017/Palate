@@ -1,15 +1,19 @@
 .navbar {
       margin-bottom: 0;
       border-radius: 0;
+      background-color: #6495ED;
+      color: white;
     }
-    
+    #text-nav:hover{
+      color: black;
+    }
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 450px}
     
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
-      background-color: #545556;
+      background-color: white;
       height: 100%;
     }
     
@@ -93,11 +97,11 @@
   border: 1px dotted black;
 }
 .footer{
-  background-color: black;
+  background-color: #D3D3D3;
 }
 
 body {
-  background: #eee !important;
+  background: white !important;
 }
 
 .wrapper {
@@ -140,4 +144,13 @@ body {
   margin-bottom: 20px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.btncolor {
+  background-color: #3CB371;
+}
+h1{
+  color: #ff5719;
+}
+#footr_text{
+  color: gray;
 }

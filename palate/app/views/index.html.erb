@@ -4,7 +4,7 @@
 <div class="top_four">
   <ul>
     <% @top_four.each do |menu_type| %>
-      <li>
+      <p>
         <%if !menu_type.empty? %>
           <%if menu_type.length>5 %>
           <%= menu_type[rand(0...4)].name %>
@@ -12,7 +12,7 @@
           <%=  menu_type[rand(0...menu_type.length-1)].name%>
           <% end %>
         <% end %>
-      </li>
+      </p>
     <% end %>
   </ul>
 </div>

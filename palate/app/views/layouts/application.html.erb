@@ -8,7 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <%= stylesheet_link_tag "application", media: "all" %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <%= javascript_include_tag "application"%>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
@@ -27,13 +28,14 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <% if current_user %>
-            <li> <%= link_to "#{current_user.username}", user_path(current_user) %></li>
+            <li > <%= link_to "#{current_user.username}", user_path(current_user) %></li>
             <li><%= link_to "Log Out", logout_path %></li>
             <li><%= link_to "Home", root_path %></li>
         <% else %>
+            <h1 style="color:white;">Palate</h1>
             <li><%= link_to "Register", new_user_path %></li>
             <li><%= link_to "Log In", login_path %></li>
-            <li><%= link_to "Home", root_path %></li>
+            <li id="text-nav"><%= link_to "Home", root_path %></li>
         <% end %>
       </ul>
   </div>
@@ -43,26 +45,26 @@
   <div class="row content">
     <div class="col-sm-2 sidenav">
     
-      <div class="well">
-        <p><a href="#">Appetizer</a></p>
+      <div class="well btncolor">
+        <p><a href="/recipes/query?type=Appetizer">Appetizer</a></p>
       </div>
 
-      <div class="well">
-        <p><a href="#">Salad</a></p>
+      <div class="well btncolor">
+        <p><a href="/recipes/query?type=Salad">Salad</a></p>
       </div>
 
-       <div class="well">
-        <p><a href="#">Entree</a></p>
+       <div class="well btncolor">
+        <p><a href="/recipes/query?type=Entree">Entree</a></p>
       </div>
 
-       <div class="well">
+       <div class="well btncolor">
 
-        <p><a href="#">Dessert</a></p>
+        <p><a href="/recipes/query?type=Dessert">Dessert</a></p>
       </div>
 
     </div>
     <div class="col-sm-8 text-left"> 
-      <h1>Welcome To Palate</h1>
+      
       <hr>
       <div id="yield">
         <h2></h2>
@@ -76,7 +78,7 @@
 </div>
 
 <footer class="container-fluid text-center footer">
-  <p>Footer Text</p>
+  <p id="footr_text">Footer Text</p>
 </footer>
 
 </body>
