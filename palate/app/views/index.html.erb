@@ -1,18 +1,35 @@
 
-
-
 <div class="top_four">
-  <ul>
+
     <% @top_four.each do |menu_type| %>
+<<<<<<< HEAD
       <p>
+=======
+>>>>>>> 04f0a022348f77fbbbadb1f935525a34a35c649a
         <%if !menu_type.empty? %>
           <%if menu_type.length>5 %>
-          <%= menu_type[rand(0...4)].name %>
+          <% recipe =  menu_type[rand(0...4)]%>
+            <div class="each_menu">
+              <%= recipe.course_type %>
+              <br>
+              <%= link_to recipe.name, recipe_path(recipe)%>
+            </div>
+            <br>
           <% else %>
-          <%=  menu_type[rand(0...menu_type.length-1)].name%>
+          <% recipe = menu_type[rand(0...menu_type.length-1)]%>
+            <div class="each_menu">
+              <%= recipe.course_type %>
+              <br>
+              <%= link_to recipe.name, recipe_path(recipe)%>
+            </div>
+            <br>
           <% end %>
         <% end %>
+<<<<<<< HEAD
       </p>
+=======
+
+>>>>>>> 04f0a022348f77fbbbadb1f935525a34a35c649a
     <% end %>
-  </ul>
+
 </div>

@@ -16,8 +16,6 @@ users.each do |user|
 	User.create(user)
 end
 
-
-
 	app1 = Recipe.create(name: "Paella", cuisine: "Spanish", course_type: "Appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 2 ,creator_id: 1)
 	app2 = Recipe.create(name: "Meatballs", cuisine: "Italian", course_type: "Appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 3 ,creator_id: 2)
 	app3 = Recipe.create(name: "Satay", cuisine: "Burmese", course_type: "Appetizer", instructions: "Just prepare, cook, and enjoy!", time: "60 minutes", difficulty_level: 5 ,creator_id: 3)
@@ -38,8 +36,10 @@ end
 	dessert1 = Recipe.create(name: "Alfajores", cuisine: "Mexican", course_type: "Dessert", instructions: "Just bake and enjoy", time: "60 minutes", difficulty_level: 3 ,creator_id: 3)
 	dessert2 = Recipe.create(name: "Creme Brulee", cuisine: "French", course_type: "Dessert", instructions: "Just bake and enjoy", time: "3 hours", difficulty_level: 5 ,creator_id: 2)
 
- 
 
+recipes.each do |recipe|
+	Recipe.create(recipe)
+end
 
 ingredients = [
 
@@ -123,4 +123,3 @@ ratings = [
 ratings.each do |rating|
 	Rating.create(rating)
 end
-
