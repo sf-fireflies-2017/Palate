@@ -1,0 +1,9 @@
+<h1>All Recipes (a-z) </h1>
+<% sorted_recipes = sort_recipes(@recipes) %>
+
+<% sorted_recipes.each do |recipe| %>
+
+  <p><%= link_to "#{recipe.name}", recipe_path(recipe)%> BY <%= recipe.creator.full_name.upcase %></p>
+
+<% end %>
+

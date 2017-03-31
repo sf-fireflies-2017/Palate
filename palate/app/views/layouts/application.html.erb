@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Palate</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <%= stylesheet_link_tag "application", media: "all" %>
+   <%= javascript_include_tag "application"%>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= image_tag "logo.jpg" %>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <% if current_user %>
+            <li > <%= link_to "#{current_user.username}", user_path(current_user) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+            <li><%= link_to "Home", root_path %></li>
+        <% else %>
+            <h1 style="color:white;">Palate</h1>
+            <li><%= link_to "Register", new_user_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+            <li id="text-nav"><%= link_to "Home", root_path %></li>
+        <% end %>
+      </ul>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+
+     <div class="well btncolor">
+        <p><a href="/recipes">All Recipes</a></p>
+      </div>
+
+      <div class="well btncolor">
+        <p><a href="/recipes/query?type=Appetizer">Appetizer</a></p>
+      </div>
+     
+
+      <div class="well btncolor">
+        <p><a href="/recipes/query?type=Salad">Salad</a></p>
+      </div>
+
+       <div class="well btncolor">
+        <p><a href="/recipes/query?type=Entree">Entree</a></p>
+      </div>
+
+       <div class="well btncolor">
+
+        <p><a href="/recipes/query?type=Dessert">Dessert</a></p>
+      </div>
+
+    </div>
+
+    <div class="col-sm-8 text-left"> 
+
+      <hr>
+      <div id="yield">
+        <h2></h2>
+        <%= yield %>
+      </div>
+      <hr>
+    </div>
+    <div class="col-sm-2 sidenav">
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center footer">
+
+  <p class="footr_text">
+  <table class="footr_text">
+    <tr>
+      <p style="color:gray;">Palate is the virtual home of Jerome Mathew's marriage of culinary passion and social networking. At Palate, you will not only find recipes created by food lovers all over the world, but you can also grab a taste at Jerome's restaurant, Plated.</p>
+      <p style="color:gray;">Housed in San Francisco, Plated serves up a weekly changing menu based on Palate's top rated recipes.
+        Come get a taste!
+      <p style="color:gray;">1234 Folsom Street</p>
+      <p style="color:gray;">San Francisco, CA 94501<p>
+      <p style="color:gray;">Tuesday - Saturday 3PM - 11PM</p></p>
+      <p style="color:gray;">Did we mention chosen recipes receive 10% of the profits? To submit a recipe, <%= link_to "Register Now!", new_user_path %></p>
+    </tr>
+  </table>
+  </p>
+</footer>
+
+</body>
+</html>

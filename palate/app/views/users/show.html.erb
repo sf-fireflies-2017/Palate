@@ -1,0 +1,18 @@
+<h1> Welcome Back, <%= @user.first_name.capitalize %>! </h1>
+<h2> Select a Course to Create a New Recipe</h2>
+
+<%= button_to "Appetizer", new_recipe_path, params: {type: 'Appetizer'}, method: :get %>
+<%= button_to "Salad", new_recipe_path, params: {type: 'Salad'}, method: :get %>
+<%= button_to "Entree", new_recipe_path, params: {type: 'Entree'}, method: :get %>
+<%= button_to "Dessert", new_recipe_path, params: {type: 'Dessert'}, method: :get %>
+
+<br>
+<br>
+
+<h2>Your Recipes:</h2>
+
+
+	<%@user.recipes.each do |recipe| %>
+		<p> <%=link_to "#{recipe.name}", recipe_path(recipe) %> <% if recipe.ratings.any? %> Average Rating: <%=recipe.average_rating%><% end %> <%= link_to "Edit", edit_recipe_path(recipe) %> <%= link_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?"} %>  </p>
+	<%end%>
+

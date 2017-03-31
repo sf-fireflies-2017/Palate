@@ -1,0 +1,42 @@
+<% if @recipe.ratings.any? %>
+  <h1><%= @recipe.name.upcase %> | Rating: <%= @recipe.ratings.first.value %></h1>
+<% else %>
+  <h1><%= @recipe.name.upcase %></h1>
+<% end %>
+
+<h2><%= @recipe.cuisine %> | <%= @recipe.course_type.capitalize %></h2>
+
+<h3> Time: <%= @recipe.time %> | Difficulty: <%= @recipe.difficulty_level %></h3>
+
+<h4>Ingredients:</h4>
+<% @ingredients.each do |ingredient| %>
+  <p><%= ingredient.item %>: <%= ingredient.amount %> <%= ingredient.metric %></p>
+<% end %>
+
+<h4>Instructions:</h4>
+<%= @recipe.instructions %>
+
+<h5> Submitted By: <%= @creator %></h5>
+<br>
+
+<% if @recipe.creator == current_user %>
+  <%= button_to "Edit Recipe", edit_recipe_path(@recipe), method: :get %>
+  <%= button_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?"} %>
+<%else%>
+
+
+  <% if @recipe.ratings.include?(Rating.find_by(rater_id: current_user.id, recipe_id: @recipe.id)) %>
+      <%existing_rating = @recipe.ratings.find_by(rater_id: current_user.id)%>
+      <%= button_to "Delete Rating", recipe_rating_path(@recipe,existing_rating), method: :delete, data: { confirm: "Are you sure?"} %>
+  <%else%>
+    <%= render 'ratings/rating'%>
+  <%end%>
+
+
+
+
+<% end %>
+
+
+<br>
+<br>
